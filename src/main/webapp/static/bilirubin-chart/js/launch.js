@@ -1,6 +1,7 @@
 var iss = getParameterByName('iss');
 var client_id = "bilirubin_chart";
 var scopes = "patient/*.*";
+var redirect_uri = null;
 
 jQuery.get('config/config.json', function(data) {
 
@@ -12,10 +13,18 @@ jQuery.get('config/config.json', function(data) {
         }
     }
 
-    FHIR.oauth2.authorize({
-        "client_id": client_id,
-        "scope":  scopes
-    });
+    if (redirect_uri !== null) {
+        FHIR.oauth2.authorize({
+            "client_id": client_id,
+            "scope": scopes,
+            "redirect_url": redirect_uri
+        });
+    } else {
+        FHIR.oauth2.authorize({
+            "client_id": client_id,
+            "scope": scopes
+        });
+    }
 });
 
 function getParameterByName(name) {
