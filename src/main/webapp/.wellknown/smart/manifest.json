@@ -2,10 +2,10 @@
   "software_id": "org.hspconsortium.bilirubin:bilirubin-risk-chart:1.0-SNAPSHOT",
   "client_name": "Bilirubin Risk Chart",
   "client_uri": "https://apps.hspconsortium.org/hspc-bilirubin-risk-chart/index.html",
-  "logo_uri": "https://apps.hspconsortium.org/hspc-bilirubin-risk-chart/images/logo.png",
-  "launch_url": "https://apps.hspconsortium.org/hspc-bilirubin-risk-chart/launch.html",
+  "logo_uri": "https://apps.hspconsortium.org/hspc-bilirubin-risk-chart/static/bilirubin-chart/images/bilirubin.png",
+  "launch_url": "https://apps.hspconsortium.org/hspc-bilirubin-risk-chart/static/bilirubin-chart/launch.html",
   "redirect_uris": [
-    "https://apps.hspconsortium.org/hspc-bilirubin-risk-chart/index.html"
+    "https://apps.hspconsortium.org/hspc-bilirubin-risk-chart/static/bilirubin-chart/index.html"
   ],
   "scope": "launch online_access patient/Patient.read patient/Observation.read patient/Observation.write",
   "token_endpoint_auth_method": "none",
