@@ -1,11 +1,11 @@
 [
     {
-        "fhir_service": "http://localhost:8080/hspc-reference-api/data",
+        "fhir_service": "http://localhost:8071/data",
         "client_id": "bilirubin_chart",
         "scopes":  "patient/*.*"
     },
     {
-        "fhir_service": "https://sandbox.hspconsortium.org/dstu2/hspc-reference-api/data",
+        "fhir_service": "https://api.hspconsortium.org/hspc/data",
         "client_id": "bilirubin_chart",
         "scopes":  "patient/*.*"
     },
