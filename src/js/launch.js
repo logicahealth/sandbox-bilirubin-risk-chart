@@ -1,6 +1,6 @@
 var iss = getParameterByName('iss');
 var client_id = "bilirubin_chart";
-var scopes = "patient/*.*";
+var scopes = "launch patient/Patient.read patient/Observation.read patient/Observation.write";
 var redirect_uri = null;
 
 jQuery.get('config/config.json', function(data) {
@@ -8,7 +8,6 @@ jQuery.get('config/config.json', function(data) {
     for(var i = 0; i < data.length; i++){
         if (data[i].fhir_service === iss || (data[i].provider !== undefined && iss.indexOf(data[i].provider) > -1)){
             client_id = data[i].client_id;
-            scopes = data[i].scopes;
             break;
         }
     }
