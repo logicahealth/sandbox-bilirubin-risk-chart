@@ -1,6 +1,6 @@
 {
   "name": "bilirubin-risk-chart",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "scripts": {
     "serve": "./node_modules/http-server/bin/http-server src -p 8086"
   },
@@ -8,5 +8,7 @@
   },
   "devDependencies": {
     "http-server": "^0.10.0"
-  }
+  },
+  "license": "Apache-2.0",
+  "repository": "https://bitbucket.org/hspconsortium/bilirubin-risk-chart.git"
 }
