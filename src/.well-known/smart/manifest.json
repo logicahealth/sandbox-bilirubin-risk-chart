@@ -1,10 +1,11 @@
 {
   "software_id": "org.hspconsortium.bilirubin:bilirubin-risk-chart:1.0-SNAPSHOT",
   "client_name": "Bilirubin Risk Chart",
+  "client_uri": "http://localhost:8086/index.html",
   "logo_uri": "https://content.hspconsortium.org/images/bilirubin/logo/bilirubin.png",
-  "launch_url": "https://bilirubin-risk-chart.hspconsortium.org/launch.html",
+  "launch_url": "http://localhost:8086/launch.html",
   "redirect_uris": [
-    "https://bilirubin-risk-chart.hspconsortium.org"
+    "http://localhost:8086/index.html"
   ],
   "scope": "launch online_access patient/Patient.read patient/Observation.read patient/Observation.write",
   "token_endpoint_auth_method": "none",
