@@ -19,14 +19,14 @@
 		<![endif]-->
 	</head>
 	<body ng-controller="bilirubinCtrl" ng-cloak>
-		<header class="navbar navbar-inverse navbar-static-top" role="navigation">
+		<header ng-show="showPatientBanner" class="navbar navbar-inverse navbar-static-top" ng-cloak role="navigation">
 			<p class="navbar-brand"><span class="glyphicon glyphicon-user"></span>{{patient.name}}</p>
 			<p class="navbar-text">sex <span class="title">{{patient.sex}}</span></p>
 			<p class="navbar-text">dob <span class="title">{{patient.dob | date: 'dd MMM yyyy HH:mm'}}</span></p>
 			<p class="navbar-text">age <span class="title">{{patient.dob | age}}</span></p>
             <img style="position:absolute;z-index: 1000; right:15px;top:3px;height: 45px" src="images/intermountainCenterVertical.png">
 		</header>
-		<div class="container-fluid">
+		<div ng-class="showPatientBanner ? 'container-fluid' : 'container-fluid-no-banner'">
 			<div class="row" style="height: 100%">
 				<highchart config="chartConfig" class="col-xs-6" style="height: 100%"></highchart>
 				<div class="col-xs-6">

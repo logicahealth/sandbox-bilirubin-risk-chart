@@ -2,7 +2,7 @@
   "name": "bilirubin-risk-chart",
   "version": "1.0.1",
   "scripts": {
-    "serve": "./node_modules/http-server/bin/http-server src -p 8086"
+    "serve": "./node_modules/http-server/bin/http-server src -p 8086 --cors"
   },
   "dependencies": {
   },
