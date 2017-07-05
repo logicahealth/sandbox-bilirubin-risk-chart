@@ -24,6 +24,6 @@
     {
         "provider": "smart",
         "fhir_service": "https://fhir-api-dstu2.smarthealthit.org",
-        "client_id": "844c7bd2-d6a0-4c9b-ab3b-0a67c3e4cd72"
+        "client_id": "c45f7cb8-11ee-4551-8806-582ea6a00b98"
     }
 ]
