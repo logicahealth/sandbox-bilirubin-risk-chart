@@ -268,7 +268,7 @@ angular.module('bilirubinApp.controllers', []).controller('bilirubinCtrl', ['$sc
 
     FHIR.oauth2.ready(function(smart){
         $scope.smart = smart;
-        $scope.showPatientBanner = !(smart.tokenResponse.need_patient_banner === 'no');
+        $scope.showPatientBanner = !(smart.tokenResponse.need_patient_banner === false);
         
         queryConformanceStatement(smart).done(function(){
             hasWriteScope(smart);
