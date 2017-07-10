@@ -8,6 +8,7 @@ jQuery.get('config/config.json', function(data) {
     for(var i = 0; i < data.length; i++){
         if (data[i].fhir_service === iss || (data[i].provider !== undefined && iss.indexOf(data[i].provider) > -1)){
             client_id = data[i].client_id;
+            redirect_uri = data[i].redirect_uri;
             break;
         }
     }
@@ -16,7 +17,7 @@ jQuery.get('config/config.json', function(data) {
         FHIR.oauth2.authorize({
             "client_id": client_id,
             "scope": scopes,
-            "redirect_url": redirect_uri
+            "redirect_uri": redirect_uri
         });
     } else {
         FHIR.oauth2.authorize({
