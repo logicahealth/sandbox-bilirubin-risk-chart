@@ -57,7 +57,32 @@ angular.module('bilirubinApp.filters', []).filter('age', ["$filter", function($f
             return $filter('number')(hours, 2) + "h";
         else return "Could not calculate age";
 	};
-}]).filter('textOrNumber', function ($filter) {
+}]).filter('nameGivenFamily', function () {
+    return function(p){
+        var isArrayName = p && p.name && p.name[0];
+        var personName;
+
+        if (isArrayName) {
+            personName = p && p.name && p.name[0];
+            if (!personName) return null;
+
+        } else {
+            personName = p && p.name;
+            if (!personName) return null;
+        }
+
+        var user;
+        if (Object.prototype.toString.call(personName.family) === '[object Array]') {
+            user = personName.given.join(" ") + " " + personName.family.join(" ");
+        } else {
+            user = personName.given.join(" ") + " " + personName.family;
+        }
+        if (personName.suffix) {
+            user = user + ", " + personName.suffix.join(", ");
+        }
+        return user;
+    };
+}).filter('textOrNumber', function ($filter) {
         return function (input, fractionSize) {
             if (isNaN(input)) {
                 return input;

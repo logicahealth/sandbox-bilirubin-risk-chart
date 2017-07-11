@@ -190,12 +190,7 @@ angular.module('bilirubinApp.controllers', []).controller('bilirubinCtrl', ['$sc
         var deferred = $.Deferred();
         $.when(smart.patient.read())
             .done(function(patient){
-                angular.forEach(patient.name[0].given, function (value) {
-                    $scope.patient.name = $scope.patient.name + ' ' + String(value);
-                });
-                angular.forEach(patient.name[0].family, function (value) {
-                    $scope.patient.name = $scope.patient.name + ' ' + value;
-                });
+                $scope.patient.name = $filter('nameGivenFamily')(patient);
 
                 // Check for the patient-birthTime Extension
                 if (typeof patient.extension !== "undefined") {
