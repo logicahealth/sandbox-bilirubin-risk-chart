@@ -11,7 +11,7 @@
   },
   {
     "provider": "cerner",
-    "fhir_service": "https://fhir.sandboxcernerpowerchart.com/may2015/d075cf8b-3261-481d-97e5-ba6c48d3b41f",
+    "fhir_service": "https://fhir-ehr.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca",
     "redirect_uri": "http://localhost:8086/index.html",
     "client_id": "7601f489-8671-44e1-ac0e-53a2336499dc"
   },
