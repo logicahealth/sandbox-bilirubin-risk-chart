@@ -13,7 +13,7 @@
     "provider": "cerner",
     "fhir_service": "https://fhir-ehr.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca",
     "redirect_uri": "http://localhost:8086/index.html",
-    "client_id": "7601f489-8671-44e1-ac0e-53a2336499dc"
+    "client_id": "fa6505a1-ec48-4f6a-807f-6e0abe4061a8"
   },
   {
     "provider": "epic",
