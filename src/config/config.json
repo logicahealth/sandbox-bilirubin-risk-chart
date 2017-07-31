@@ -32,5 +32,11 @@
     "fhir_service": "https://fhir-api-dstu2.smarthealthit.org",
     "redirect_uri": "http://localhost:8086/index.html",
     "client_id": "c45f7cb8-11ee-4551-8806-582ea6a00b98"
+  },
+  {
+    "provider": "tsystems",
+    "fhir_service": "https://fhirsandbox2.tsysinteropsvcs.net:8100/sites/123",
+    "redirect_uri": "http://localhost:8086/index.html",
+    "client_id": "hspc"
   }
 ]
