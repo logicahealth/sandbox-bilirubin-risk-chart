@@ -154,7 +154,7 @@ angular.module('bilirubinApp.controllers', []).controller('bilirubinCtrl', ['$sc
 
     function hasWriteScope(smart){
         var scope = smart.tokenResponse.scope;
-        var scopes = scope.split(" ");
+        var scopes = scope ? scope.split(" ") : "";
 
         angular.forEach(scopes, function (value) {
             if (value === "patient/*.*" ||
