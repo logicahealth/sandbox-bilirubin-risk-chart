@@ -17,5 +17,5 @@ The app contains dynamic registration at:
 The app is available for SMART Launch at:
 
 * launch_url: http://localhost:8086/launch.html
-* redirect_url: http://localhost:8086/
+* redirect_uri: http://localhost:8086/index.html
 * image_url: https://content.hspconsortium.org/images/bilirubin/logo/bilirubin.png

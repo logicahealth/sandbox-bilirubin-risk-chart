@@ -28,6 +28,7 @@ angular.module('bilirubinApp.controllers', []).controller('bilirubinCtrl', ['$sc
     $scope.isSaveDisabled = true;
     $scope.isReadOnly = true;
     $scope.enterObsVisible = false;
+    $scope.showPatientBanner = false;
 
     var newPoint = [];
     var lastPoint = [];
@@ -180,6 +181,8 @@ angular.module('bilirubinApp.controllers', []).controller('bilirubinCtrl', ['$sc
                     });
                 });
                 deferred.resolve();
+            }).fail(function(error){
+                deferred.resolve();
             });
         return deferred;
     }
@@ -187,12 +190,7 @@ angular.module('bilirubinApp.controllers', []).controller('bilirubinCtrl', ['$sc
         var deferred = $.Deferred();
         $.when(smart.patient.read())
             .done(function(patient){
-                angular.forEach(patient.name[0].given, function (value) {
-                    $scope.patient.name = $scope.patient.name + ' ' + String(value);
-                });
-                angular.forEach(patient.name[0].family, function (value) {
-                    $scope.patient.name = $scope.patient.name + ' ' + value;
-                });
+                $scope.patient.name = $filter('nameGivenFamily')(patient);
 
                 // Check for the patient-birthTime Extension
                 if (typeof patient.extension !== "undefined") {
@@ -265,7 +263,8 @@ angular.module('bilirubinApp.controllers', []).controller('bilirubinCtrl', ['$sc
 
     FHIR.oauth2.ready(function(smart){
         $scope.smart = smart;
-
+        $scope.showPatientBanner = !(smart.tokenResponse.need_patient_banner === false);
+        
         queryConformanceStatement(smart).done(function(){
             hasWriteScope(smart);
             queryPatient(smart).done(function(){

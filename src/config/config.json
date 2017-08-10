@@ -1,29 +1,42 @@
 [
-    {
-        "fhir_service": "http://localhost:8071/data",
-        "client_id": "bilirubin_chart"
-    },
-    {
-        "fhir_service": "https://api.hspconsortium.org/hspc/data",
-        "client_id": "bilirubin_chart"
-    },
-    {
-        "fhir_service": "http://54.213.219.198:9080/uat/hspc-reference-api/data",
-        "client_id": "bilirubin_chart"
-    },
-    {
-        "provider": "cerner",
-        "fhir_service": "https://fhir.sandboxcernerpowerchart.com/may2015/d075cf8b-3261-481d-97e5-ba6c48d3b41f",
-        "client_id": "7601f489-8671-44e1-ac0e-53a2336499dc"
-    },
-    {
-        "provider": "epic",
-        "fhir_service": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2",
-        "client_id": "FA6AEF30EADD40E2905EAD2D083F07D4"
-    },
-    {
-        "provider": "smart",
-        "fhir_service": "https://fhir-api-dstu2.smarthealthit.org",
-        "client_id": "844c7bd2-d6a0-4c9b-ab3b-0a67c3e4cd72"
-    }
+  {
+    "fhir_service": "http://localhost:8071/data",
+    "redirect_uri": "http://localhost:8086/index.html",
+    "client_id": "bilirubin_chart"
+  },
+  {
+    "fhir_service": "https://api.hspconsortium.org/hspc/data",
+    "redirect_uri": "http://localhost:8086/index.html",
+    "client_id": "bilirubin_chart"
+  },
+  {
+    "provider": "cerner",
+    "fhir_service": "https://fhir-ehr.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca",
+    "redirect_uri": "http://localhost:8086/index.html",
+    "client_id": "fa6505a1-ec48-4f6a-807f-6e0abe4061a8"
+  },
+  {
+    "provider": "epic",
+    "fhir_service": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2",
+    "redirect_uri": "http://localhost:8086/index.html",
+    "client_id": "FA6AEF30EADD40E2905EAD2D083F07D4"
+  },
+  {
+    "provider": "epic-cds-hooks",
+    "fhir_service": "https://open-ic.epic.com/FHIR-2016-Secure/api/FHIR/DSTU2",
+    "redirect_uri": "http://localhost:8086/index.html",
+    "client_id": "1e2b8d1b-0592-4175-9926-2b1bbeb16c87"
+  },
+  {
+    "provider": "smart",
+    "fhir_service": "https://fhir-api-dstu2.smarthealthit.org",
+    "redirect_uri": "http://localhost:8086/index.html",
+    "client_id": "c45f7cb8-11ee-4551-8806-582ea6a00b98"
+  },
+  {
+    "provider": "tsystems",
+    "fhir_service": "https://fhirsandbox2.tsysinteropsvcs.net:8100/sites/123",
+    "redirect_uri": "http://localhost:8086/index.html",
+    "client_id": "hspc"
+  }
 ]
