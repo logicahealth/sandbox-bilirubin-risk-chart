@@ -19,7 +19,7 @@
     "provider": "epic",
     "fhir_service": "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2",
     "redirect_uri": "http://localhost:8086/index.html",
-    "client_id": "FA6AEF30EADD40E2905EAD2D083F07D4"
+    "client_id": "1e2b8d1b-0592-4175-9926-2b1bbeb16c87"
   },
   {
     "provider": "epic-cds-hooks",
