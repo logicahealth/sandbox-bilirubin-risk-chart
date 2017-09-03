@@ -1,4 +1,5 @@
 var iss = getParameterByName('iss');
+var launch = getParameterByName('launch');
 var client_id = "bilirubin_chart";
 var scopes = "launch patient/Patient.read patient/Observation.read patient/Observation.write";
 var redirect_uri = null;
@@ -11,6 +12,11 @@ jQuery.get('config/config.json', function(data) {
             redirect_uri = data[i].redirect_uri;
             break;
         }
+    }
+
+    // No launch parameter provided. This is a standalone launch.
+    if (launch === "") {
+        scopes = scopes + " launch/patient";
     }
 
     if (redirect_uri !== null) {
