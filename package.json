@@ -3,9 +3,11 @@
   "version": "1.2.6",
   "scripts": {
     "serve": "./node_modules/http-server/bin/http-server src -p 8086 --cors",
-    "start-server": "./node_modules/http-server/bin/http-server src -p 8086 --cors"
+    "start-server": "serve -s -p8086",
+    "port": "8086"
   },
   "dependencies": {
+    "serve": "^5.2.1"
   },
   "devDependencies": {
     "http-server": "^0.10.0"
