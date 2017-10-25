@@ -5,8 +5,7 @@
     "serve": "./node_modules/http-server/bin/http-server src -p 8086 --cors",
     "start-server": "./node_modules/http-server/bin/http-server src -p 8086 --cors"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "http-server": "^0.10.0"
   },
