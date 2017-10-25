@@ -4,10 +4,19 @@
 
 HSPC Bilirubin Risk Chart is hosted as a static web app.
 
+## Prerequisites
+
+````
+sudo apt-get update
+sudo apt-get npm
+sudo apt-get install nodejs
+````
+
 ## Hosting
+
 ````
 npm install
-npm run serve
+npm run start-server
 ````
 
 The app contains dynamic registration at:
