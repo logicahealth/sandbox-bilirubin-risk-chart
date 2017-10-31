@@ -3,8 +3,11 @@ var launch = getParameterByName('launch');
 var client_id = "bilirubin_chart";
 var scopes = "launch patient/Patient.read patient/Observation.read patient/Observation.write";
 var redirect_uri = null;
+//The default_config can be changed in the pipeline to use different config files for different environments.
+var default_config = 'config.json';
+var config_path = 'config/' + default_config;
 
-jQuery.get('config/config.json', function(data) {
+jQuery.get(config_path, function(data) {
 
     for(var i = 0; i < data.length; i++){
         if (data[i].fhir_service === iss || (data[i].provider !== undefined && iss.indexOf(data[i].provider) > -1)){
