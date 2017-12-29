@@ -15,7 +15,7 @@
     "environment": [
       {
         "name": "ACTIVE_ENV_SM",
-        "value": "test"
+        "value": "prod"
       }
     ]
   }

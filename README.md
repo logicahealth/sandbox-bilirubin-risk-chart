@@ -8,7 +8,7 @@ HSPC Bilirubin Risk Chart is hosted as a static web app.
 
 ````
 sudo apt-get update
-sudo apt-get npm
+sudo apt-get install npm
 sudo apt-get install nodejs
 ````
 
