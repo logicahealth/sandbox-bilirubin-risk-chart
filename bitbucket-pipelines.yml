@@ -14,6 +14,7 @@ pipelines:
           caches:
             - node
           script:
+            - export ACTIVE_ENV=test
             # install ASW CLI, jq library, node
 #            - npm install
 #            - apk --no-cache update && apk --no-cache add python py-pip py-setuptools ca-certificates curl groff less && pip --no-cache-dir install awscli && rm -rf /var/cache/apk/*
@@ -23,7 +24,7 @@ pipelines:
             # build docker image and push to nexus.interopion.com:18083 (docker-interopion)
             - export IMAGE_NAME=$(cat container-definitions_test.json | jq --raw-output '.[0].image')
             - docker login -u $NEXUS_USR -p $NEXUS_PWD nexus.hspconsortium.org:18083
-            - docker build -t $IMAGE_NAME .
+            - docker build --build-arg ACTIVE_ENV=$ACTIVE_ENV -t $IMAGE_NAME .
             - docker push $IMAGE_NAME
             # register the ECS task definition and capture the version
             - export TASK_VERSION=$(aws ecs register-task-definition --family bilirubin-risk-chart --container-definitions $(cat container-definitions_test.json | jq -c '.')  | jq --raw-output '.taskDefinition.revision')
@@ -51,6 +52,7 @@ pipelines:
     master:
       - step:
           script:
+            - export ACTIVE_ENV=prod
             # install ASW CLI, jq library, node
 #            - npm install
 #            - apk --no-cache update && apk --no-cache add python py-pip py-setuptools ca-certificates curl groff less && pip --no-cache-dir install awscli && rm -rf /var/cache/apk/*
@@ -60,7 +62,7 @@ pipelines:
             # build docker image and push to nexus.interopion.com:18083 (docker-interopion)
             - export IMAGE_NAME=$(cat container-definitions_prod.json | jq --raw-output '.[0].image')
             - docker login -u $NEXUS_USR -p $NEXUS_PWD nexus.hspconsortium.org:18083
-            - docker build -t $IMAGE_NAME .
+            - docker build --build-arg ACTIVE_ENV=$ACTIVE_ENV -t $IMAGE_NAME .
             - docker push $IMAGE_NAME
             # register the ECS task definition and capture the version
             - export TASK_VERSION=$(aws ecs register-task-definition --family bilirubin-risk-chart --container-definitions $(cat container-definitions_prod.json | jq -c '.')  | jq --raw-output '.taskDefinition.revision')
