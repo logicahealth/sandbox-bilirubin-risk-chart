@@ -10,7 +10,9 @@ var config_path = 'config/' + default_config;
 jQuery.get(config_path, function(data) {
 
     for(var i = 0; i < data.length; i++){
-        console.log("data: " + i + " is " + data[i]);
+        console.log("data cid: " + i + " is " + data[i].client_id);
+        console.log("data ruri: " + i + " is " + data[i].redirect_uri);
+        console.log("data scope: " + i + " is " + data[i].scope);
         if (data[i].fhir_service === iss || (data[i].provider !== undefined && iss.indexOf(data[i].provider) > -1)){
             client_id = data[i].client_id;
             console.log("client_id: " + client_id);
