@@ -10,6 +10,10 @@ var config_path = 'config/' + default_config;
 jQuery.get(config_path, function(data) {
 
     for(var i = 0; i < data.length; i++){
+        var keys = Object.keys(data);
+        for(i=0; i<keys.length+1; i++ ){
+            console.log("key: " + i + keys[i]);
+        }
         console.log("data cid: " + i + " is " + data[i].client_id);
         console.log("data ruri: " + i + " is " + data[i].redirect_uri);
         console.log("data scope: " + i + " is " + data[i].scope);
