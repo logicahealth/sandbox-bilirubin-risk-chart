@@ -10,14 +10,19 @@ var config_path = 'config/' + default_config;
 jQuery.get(config_path, function(data) {
 
     for(var i = 0; i < data.length; i++){
+        console.log("data: " + i + " is " + data[i]);
         if (data[i].fhir_service === iss || (data[i].provider !== undefined && iss.indexOf(data[i].provider) > -1)){
             client_id = data[i].client_id;
+            console.log("client_id: " + client_id);
             redirect_uri = data[i].redirect_uri;
+            console.log("redirect_uri: " + redirect_uri);
             break;
         }
     }
 
     // No launch parameter provided. This is a standalone launch.
+    console.log("launch scope: " + scopes);
+    console.log("launch : " + launch);
     if (launch === "") {
         scopes = scopes + " launch/patient";
     }
