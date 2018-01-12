@@ -1,7 +1,7 @@
 [
   {
-    "name": "bilirubin-risk-chart-prod",
-    "image": "nexus.hspconsortium.org:18083/hspc/bilirubin-risk-chart:1.2.17",
+    "name": "{{$PROJECT_NAME}}",
+    "image": "nexus.hspconsortium.org:18083/hspc/bilirubin-risk-chart:1.2.17-SNAPSHOT",
     "cpu": 0,
     "portMappings": [
       {
@@ -15,7 +15,7 @@
     "environment": [
       {
         "name": "ACTIVE_ENV_SM",
-        "value": "prod"
+        "value": "test"
       }
     ]
   }
