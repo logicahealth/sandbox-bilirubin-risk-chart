@@ -1,6 +1,6 @@
 [
   {
-    "name": "bilirubin-risk-chart-prod",
+    "name": "bilirubin-risk-chart",
     "image": "nexus.hspconsortium.org:18083/hspc/bilirubin-risk-chart:1.2.17",
     "cpu": 0,
     "portMappings": [

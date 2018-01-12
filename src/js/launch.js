@@ -22,6 +22,9 @@ jQuery.get(config_path, function(data) {
         scopes = scopes + " launch/patient";
     }
 
+    console.log("client_id: " + client_id);
+    console.log("scopes : " + scopes);
+    console.log("redirect_uri : " + redirect_uri);
     if (redirect_uri !== null) {
         FHIR.oauth2.authorize({
             "client_id": client_id,
