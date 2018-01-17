@@ -1,113 +1,87 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="bilirubinApp">
-	<head>
-		<meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="IE=10">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Bilirubin</title>
-        <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bilirubin Risk Chart</title>
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
 
-		<link rel="stylesheet" href="libs/bootstrap-3.3.5-dist/css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script type="application/ld+json">
+        {
+          "@context" : "http://schema.org",
+          "@type" : "WebPage",
+          "name" : "Bilirubin Risk Chart",
+          "author" : {
+            "@type" : "Organization",
+            "name" : "HSPC"
+          },
+          "image" : "https://bilirubin-risk-chart.hspconsortium.org/images/interface_example.png",
+          "description": "Reduce the incidence of severe hyperbilirubinemia and bilirubin encephalopathy with this interactive clinical application.",
+          "url" : "https://bilirubin-risk-chart.hspconsortium.org/"
+        }
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <img src="images/hspc-company-logo.png">
+        <div class="index_button">
+            <a href="https://gallery.hspconsortium.org/#/app-gallery" target="_blank">
+                <button>Open in the HSPC Gallery</button>
+            </a>
+        </div>
+        <div class="index_header">Bilirubin Risk Chart</div>
+    </div>
+    <div class="index_outside_navbar">
+        <div class="index_body">
+            <div class="screenshot">
+                <a class="zoombox" href="#image">
+                    <img src="images/interface_example.png">
+                </a>
+            </div>
+            <div class="index_body_side">
+                <p>
+                    The Intermountain Healthcare Bilirubin Risk Chart App is based on Intermountain’s HELP2 application of the same name.
+                    This app is for demonstration purposes only and is not approved for clinical use.
+                    It was created to highlight the concept of the HSPC model, which creates a method of sharing clinical applications currently locked up in a single organization or EHR vendor and make it available to all healthcare providers.
+                </p>
+                <p>
+                    Jaundice occurs in most newborn infants. Most jaundice is benign, but because of the potential toxicity of bilirubin, newborn infants must be monitored to identify those who might develop severe hyperbilirubinemia and, in rare cases, acute bilirubin encephalopathy or kernicterus.
+                    Although kernicterus should almost always be preventable, cases continue to occur.
+                    The focus of this app is to reduce the incidence of severe hyperbilirubinemia and bilirubin encephalopathy while minimizing the risks of unintended harm such as maternal anxiety, decreased breastfeeding, and unnecessary costs or treatment.
+                </p>
+                <p>
+                    By overlaying bilirubin [Mass/volume] results over a time-based risk chart, clinicians are presented with a visual representation of the results and associated criticality zones.
+                    By viewing the results in this way, the clinician can determine the best course of action based on the recommended intervention for the criticality of the result.
+                </p>
+                <div class="index_body_side_specs">
+                    <div class="specs_instance">
+                        Designed for
+                        <div class="specs_instance_def">Clinicians</div>
+                    </div>
+                    <div class="specs_instance">
+                        FHIR Compatibility
+                        <div class="specs_instance_def">DSTU 3</div>
+                    </div>
+                    <div class="specs_instance">
+                        Specialties
+                        <div class="specs_instance_def">Pediatrics</div>
+                    </div>
+                    <div class="specs_instance">
+                        Source code at: <a href="https://bitbucket.org/hspconsortium/bilirubin-risk-chart">https://bitbucket.org/hspconsortium/bilirubin-risk-chart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="zoombox-target" id="image">
+        <img src="images/interface_example.png">
+        <a class="zoombox-close" href=""></a>
+    </div>
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-			<script src="libs/IE/html5shiv-3.7.0/html5shiv.js"></script>
-			<script src="libs/IE/respond-1.4.2/respond.min.js"></script>
-
-		<![endif]-->
-	</head>
-	<body ng-controller="bilirubinCtrl" ng-cloak>
-		<header ng-show="showPatientBanner" class="navbar navbar-inverse navbar-static-top" ng-cloak role="navigation">
-			<p class="navbar-brand"><span class="glyphicon glyphicon-user"></span>{{patient.name}}</p>
-			<p class="navbar-text">sex <span class="title">{{patient.sex}}</span></p>
-			<p class="navbar-text">dob <span class="title">{{patient.dob | date: 'dd MMM yyyy HH:mm'}}</span></p>
-			<p class="navbar-text">age <span class="title">{{patient.dob | age}}</span></p>
-            <img style="position:absolute;z-index: 1000; right:15px;top:3px;height: 45px" src="images/intermountainCenterVertical.png">
-		</header>
-		<div ng-class="showPatientBanner ? 'container-fluid' : 'container-fluid-no-banner'">
-			<div class="row" style="height: 100%">
-				<highchart config="chartConfig" class="col-xs-6" style="height: 100%"></highchart>
-				<div class="col-xs-6">
-                    <table class="layout-table"><tr><td>
-
-                    <table class="table table-striped">
-						<tr>
-							<th>Date/Time</th>
-							<th>Result (mg/dL) </th>
-							<th>Age (Hrs)</th>
-							<th>Value:Test</th>
-							<th>Risk Zone</th>
-						</tr>
-						<tr ng-repeat="value in values | orderBy:currentFhirVersion.obsDateTimePath">
-							<td><div class="form-group" style="width: 125px">
-                                {{value[currentFhirVersion.obsDateTimePath] | date:'MM/dd/yyyy HH:mm'}}
-                                </div>
-                            </td>
-							<td><div class="form-group" style="width: 125px">
-                                {{value.valueQuantity.value}}
-                            </div>
-                            </td>
-                            <td>{{hours(value[currentFhirVersion.obsDateTimePath], patient.dob) | number:2}}</td>
-							<td style="text-transform: capitalize;">{{value.code.coding[0].display}}</td>
-							<td>{{risk(value.valueQuantity.value, hours(value[currentFhirVersion.obsDateTimePath], patient.dob))}}</td>
-						</tr>
-                        <tr ng-if="!isReadOnly" ng-show="enterObsVisible">
-                               <td>
-                                   <div class="form-group" style="width: 125px">
-                                       <input id="obsDate" type="text" ng-model="$parent.obsDate" ng-class="$parent.obsDateIsValid ? 'form-control' : 'invalid-form-control'">
-                                   </div>
-                               </td>
-                               <td>
-                                   <div class="form-group" style="width: 50px">
-                                         <input id="obsValue" type="text" ng-model="$parent.obsValue" ng-class="$parent.obsValueIsValid ? 'form-control' : 'invalid-form-control'">
-                                   </div>
-                               </td>
-                               <td>
-                                    {{hours(obsDate, patient.dob) | textOrNumber:2}}
-                               </td>
-                                <td>Transcutaneous Bilirubin</td>
-                                <td>
-                                    {{risk(obsValue, hours(obsDate, patient.dob))}}
-                                </td>
-                        </tr>
-                        <tr ng-if="!isReadOnly"></tr>
-                        <tr ng-if="!isReadOnly" ng-hide="enterObsVisible">
-                            <td colspan="5">
-                                <input type="image" src="images/32x32_circle_add_plus.png" ng-click="toggleObsVisible()" class="image-btn" />
-                            </td>
-                        </tr>
-                    </table>
-                    </td></tr>
-                        <tr ng-if="!isReadOnly"><td>
-                        <table>
-                            <tr ng-show="enterObsVisible">
-                                <td>
-                                    <button type="button" ng-click="saveObs($parent.obsDate, $parent.obsValue); toggleObsVisible()"
-                                            class="btn-input btn btn-default" ng-disabled="isSaveDisabled">Save</button>
-                                </td>
-                                <td>
-                                    <button type="button" ng-click="clearNewPoint(); setDefaults(); toggleObsVisible()"
-                                            class="btn-input btn btn-default">Cancel</button>
-                                </td>
-                            </tr>
-                        </table>
-                        </td></tr>
-                    </table>
-				</div>
-			</div>
-		</div>
-		<script src="libs/jquery-2.1.4/jquery.min.js"></script>
-		<script src="libs/angular-1.4.7/angular.min.js"></script>
-		<script src="libs/highcharts/highcharts.js"></script>
-		<script src="libs/highcharts/highcharts-more.js"></script>
-		<script src="libs/highcharts/highcharts-ng.min.js"></script>
-		<script src="libs/fhir-client/fhir-client.js"></script>
-        <!--<script src="fhir-client/jquery.js"></script>-->
-        <script src="js/app.js"></script>
-		<script src="js/services.js"></script>
-		<script src="js/controllers.js"></script>
-		<script src="js/filters.js"></script>
-    </body>
+</body>
 </html>
