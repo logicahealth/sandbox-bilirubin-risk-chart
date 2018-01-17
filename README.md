@@ -19,7 +19,7 @@ sudo apt-get install nodejs
 ````
 Learn about the features of the app at:
 
-* client_uri: http://localhost:8096/index.html
+* client_uri: http://localhost:8086/index.html
 
 The app contains dynamic registration at:
 
