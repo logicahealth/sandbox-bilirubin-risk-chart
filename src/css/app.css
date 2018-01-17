@@ -323,7 +323,7 @@ a.zoombox-close:after {
     top: 0px;
 }
 
-.navbar{
+.navbar_index {
     background-color: #fafafa;
     border-bottom: 2px solid #f4f4f4;
     border-radius: 0;
@@ -333,17 +333,17 @@ a.zoombox-close:after {
     overflow: hidden;
 }
 
-.navbar .navbar-text {
+.navbar_index .navbar_index-text {
     padding-right: 15px;
     font-weight: normal;
     margin: 0;
 }
 
-.navbar .navbar-text:last-child {
+.navbar_index .navbar_index-text:last-child {
     padding: 0;
 }
 
-.navbar img {
+.navbar_index img {
     height: 70px;
     padding: 10px 10px 0 18px;
     float: left;
