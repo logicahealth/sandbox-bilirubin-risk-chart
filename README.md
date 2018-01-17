@@ -17,6 +17,9 @@ sudo apt-get install nodejs
 ````
 ./run_local.sh
 ````
+Learn about the features of the app at:
+
+* client_uri: http://localhost:8086/index.html
 
 The app contains dynamic registration at:
 
@@ -25,7 +28,7 @@ The app contains dynamic registration at:
 The app is available for SMART Launch at:
 
 * launch_url: http://localhost:8086/launch.html
-* redirect_uri: http://localhost:8086/index.html
+* redirect_uri: http://localhost:8086/app.html
 * image_url: https://content.hspconsortium.org/images/bilirubin/logo/bilirubin.png
 
 With client id:
