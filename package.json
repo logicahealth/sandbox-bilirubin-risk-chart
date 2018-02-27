@@ -1,6 +1,6 @@
 {
   "name": "bilirubin-risk-chart",
-  "version": "1.2.22-SNAPSHOT",
+  "version": "1.3.0-SNAPSHOT",
   "license": "Apache-2.0",
   "repository": "https://bitbucket.org/hspconsortium/bilirubin-risk-chart.git",
   "scripts": {
@@ -15,7 +15,8 @@
     "http-server": "^0.10.0"
   },
   "config": {
-    "port": "8086",
-    "memory": "100"
+     "port": "9000",
+    "memory": "100",
+    "operations-name": "bilirubin-risk-chart-app"
   }
 }
