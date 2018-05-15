@@ -216,7 +216,7 @@ angular.module('bilirubinApp.controllers', []).controller('bilirubinCtrl', ['$sc
     function queryBilirubinData(smart) {
         var deferred = $.Deferred();
 
-        $.when(smart.patient.api.search({type: "Observation", query: {code: 'http://loinc.org|58941-6'}, count: 50}))
+        $.when(smart.patient.api.search({type: "Observation", query: {code: '58941-6'}, count: 50}))
             .done(function(obsSearchResult){
                 var observations = [];
                 if (obsSearchResult.data.entry) {
