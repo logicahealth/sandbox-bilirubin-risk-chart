@@ -9,7 +9,7 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/StructureDefinition/patient-birthTime",
-            "valueDateTime": "2016-01-04T00:00:00"
+            "valueDateTime": "2018-03-04T00:00:00"
           }
         ],
         "text": {
@@ -28,7 +28,7 @@
           }
         ],
         "gender": "male",
-        "birthDate": "2016-01-04T07:00:00.000Z"
+        "birthDate": "2018-03-04T07:00:00.000Z"
       },
       "request": {
         "method": "PUT",
@@ -52,7 +52,7 @@
         "subject": {
           "reference": "Patient/BILIBABY"
         },
-        "effectiveDateTime": "2016-01-04T15:12:00.000Z",
+        "effectiveDateTime": "2018-03-04T15:12:00.000Z",
         "valueQuantity": {
           "value": 7,
           "unit": "mg/dL",
@@ -72,40 +72,6 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "BILIBABY-OBS1",
-        "status": "final",
-        "code": {
-          "coding": [
-            {
-              "system": "http://loinc.org",
-              "code": "58941-6",
-              "display": "Transcutaneous Bilirubin"
-            }
-          ]
-        },
-        "subject": {
-          "reference": "Patient/BILIBABY"
-        },
-        "effectiveDateTime": "2016-01-04T21:00:00.000Z",
-        "valueQuantity": {
-          "value": 9.7,
-          "unit": "mg/dL",
-          "code": "mg/dL"
-        },
-        "category": {
-          "coding": [
-            {}
-          ]
-        }
-      },
-      "request": {
-        "method": "PUT",
-        "url": "Observation/BILIBABY-OBS1"
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "Observation",
         "id": "BILIBABY-OBS4",
         "status": "final",
         "code": {
@@ -120,7 +86,7 @@
         "subject": {
           "reference": "Patient/BILIBABY"
         },
-        "effectiveDateTime": "2016-01-05T00:06:00.000Z",
+        "effectiveDateTime": "2018-03-05T00:06:00.000Z",
         "valueQuantity": {
           "value": 9,
           "unit": "mg/dL",
@@ -154,7 +120,7 @@
         "subject": {
           "reference": "Patient/BILIBABY"
         },
-        "effectiveDateTime": "2016-01-05T04:30:00.000Z",
+        "effectiveDateTime": "2018-03-05T04:30:00.000Z",
         "valueQuantity": {
           "value": 10.7,
           "unit": "mg/dL",
@@ -188,7 +154,7 @@
         "subject": {
           "reference": "Patient/BILIBABY"
         },
-        "effectiveDateTime": "2016-01-05T13:36:00.000Z",
+        "effectiveDateTime": "2018-03-05T13:36:00.000Z",
         "valueQuantity": {
           "value": 11.9,
           "unit": "mg/dL",
@@ -208,40 +174,6 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "BILIBABY-OBS6",
-        "status": "final",
-        "code": {
-          "coding": [
-            {
-              "system": "http://loinc.org",
-              "code": "58941-6",
-              "display": "Transcutaneous Bilirubin"
-            }
-          ]
-        },
-        "subject": {
-          "reference": "Patient/BILIBABY"
-        },
-        "effectiveDateTime": "2016-01-05T19:48:00.000Z",
-        "valueQuantity": {
-          "value": 11.6,
-          "unit": "mg/dL",
-          "code": "mg/dL"
-        },
-        "category": {
-          "coding": [
-            {}
-          ]
-        }
-      },
-      "request": {
-        "method": "PUT",
-        "url": "Observation/BILIBABY-OBS6"
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "Observation",
         "id": "BILIBABY-OBS7",
         "status": "final",
         "code": {
@@ -256,7 +188,7 @@
         "subject": {
           "reference": "Patient/BILIBABY"
         },
-        "effectiveDateTime": "2016-01-06T03:18:00.000Z",
+        "effectiveDateTime": "2018-03-06T03:18:00.000Z",
         "valueQuantity": {
           "value": 11.4,
           "unit": "mg/dL",
@@ -290,7 +222,7 @@
         "subject": {
           "reference": "Patient/BILIBABY"
         },
-        "effectiveDateTime": "2016-01-06T15:06:00.000Z",
+        "effectiveDateTime": "2018-03-06T15:06:00.000Z",
         "valueQuantity": {
           "value": 12.9,
           "unit": "mg/dL",
@@ -324,7 +256,7 @@
         "subject": {
           "reference": "Patient/BILIBABY"
         },
-        "effectiveDateTime": "2016-01-07T03:18:00.000Z",
+        "effectiveDateTime": "2018-03-07T03:18:00.000Z",
         "valueQuantity": {
           "value": 11.5,
           "unit": "mg/dL",
@@ -358,7 +290,7 @@
         "subject": {
           "reference": "Patient/BILIBABY"
         },
-        "effectiveDateTime": "2016-01-08T03:18:00.000Z",
+        "effectiveDateTime": "2018-03-08T03:18:00.000Z",
         "valueQuantity": {
           "value": 11,
           "unit": "mg/dL",
