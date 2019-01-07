@@ -1,6 +1,6 @@
 {
   "name": "bilirubin-risk-chart",
-  "version": "1.5.0-SNAPSHOT",
+  "version": "1.5.0",
   "license": "Apache-2.0",
   "repository": "https://bitbucket.org/hspconsortium/bilirubin-risk-chart.git",
   "scripts": {
