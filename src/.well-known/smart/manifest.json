@@ -1,8 +1,8 @@
 {
-  "software_id": "org.hspconsortium.bilirubin:bilirubin-risk-chart:1.0-SNAPSHOT",
+  "software_id": "org.logicahealth.bilirubin:bilirubin-risk-chart:1.0-SNAPSHOT",
   "client_name": "Bilirubin Risk Chart",
   "client_uri": "http://localhost:8086/index.html",
-  "logo_uri": "https://content.hspconsortium.org/images/bilirubin/logo/bilirubin.png",
+  "logo_uri": "https://content.logicahealth.org/images/bilirubin/logo/bilirubin.png",
   "launch_url": "http://localhost:8086/launch.html",
   "redirect_uris": [
     "http://localhost:8086/index.html"
