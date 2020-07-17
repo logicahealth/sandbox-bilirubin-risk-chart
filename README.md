@@ -29,7 +29,7 @@ The app is available for SMART Launch at:
 
 * launch_url: http://localhost:8086/launch.html
 * redirect_uri: http://localhost:8086/app.html
-* image_url: https://content.hspconsortium.org/images/bilirubin/logo/bilirubin.png
+* image_url: https://content.logicahealth/images/bilirubin/logo/bilirubin.png
 
 With client id:
 
