@@ -1,11 +1,11 @@
 {
   "software_id": "org.logicahealth.bilirubin:bilirubin-risk-chart:1.0-SNAPSHOT",
   "client_name": "Bilirubin Risk Chart",
-  "client_uri": "http://localhost:8086/index.html",
-  "logo_uri": "https://content.logicahealth.org/images/bilirubin/logo/bilirubin.png",
-  "launch_url": "http://localhost:8086/launch.html",
+  "client_uri": "http://bilirubin-risk-chart:8086/index.html",
+  "logo_uri": "http://static-content:8090/bilirubin.png",
+  "launch_url": "http://bilirubin-risk-chart:8086/launch.html",
   "redirect_uris": [
-    "http://localhost:8086/index.html"
+    "http://bilirubin-risk-chart:8086/index.html"
   ],
   "scope": "launch online_access patient/Patient.read patient/Observation.read patient/Observation.write",
   "token_endpoint_auth_method": "none",
